@@ -1,0 +1,32 @@
+<article class="warriors">
+    <section class="layout">
+        <div class="inventor">
+            <% genius.forEach(function(item){ %>
+                <article class="artist group">
+                    <h3>
+                        <%= item.title %>
+                        <span class="small"> with
+                            <a href="/warriors/<%= item.shortname %>"><%= item.name %></a>
+                        </span>
+                    </h3>
+                    <p>
+                        <a href="/warriors/<%= item.shortname %>">
+                            <img class="inventor" src="/images/inventors/<%= item.shortname %>_tn.jpg" alt="Photo of <%= item.name %>" />
+                        </a>
+                        <% if(page != 'home'){ %>
+                            <% if(page === 'warriorsList'){ %>
+                                <%- item.summary %>
+                            <%
+                            }
+                            else{
+                        %>
+                            <%- item.description %>
+                        <%
+                            }
+                        } %>
+                    </p>
+                </article>
+            <% }); %>
+        </div>
+    </section>
+</article>
